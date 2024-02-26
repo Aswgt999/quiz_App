@@ -6,14 +6,15 @@ void main() {
 }
 
 class QuizApp extends StatefulWidget {
-  const QuizApp({Key? key}) : super(key: key);
+  const QuizApp({super.key});
 
   @override
   State<QuizApp> createState() => _QuizAppState();
 }
 
-class _QuizAppState extends State<QuizApp> {
-  @override
+class _QuizAppState extends State<QuizApp> {   // extends - inheritance
+
+  @override   // polymorphism
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,

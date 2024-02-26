@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 
 class Question extends StatefulWidget {
@@ -75,6 +75,7 @@ class _QuestionState extends State<Question> {
               decoration: BoxDecoration(color: Colors.black),
               child: Row(
                 children: [
+                  Icon(Icons.close_sharp, color: Colors.grey,),
                   Icon(Icons.close_sharp, color: Colors.grey,),
                   Icon(Icons.close_sharp, color: Colors.grey,),
                   Icon(Icons.close_sharp, color: Colors.grey,),
