@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 class Question extends StatefulWidget {
-  const Question({Key? key}) : super(key: key);
+  const Question({super.key});
 
   @override
   State<Question> createState() => _QuestionState();
@@ -16,64 +16,64 @@ class _QuestionState extends State<Question> {
       body: Center(
         child: Column(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 200,
             ),
             Container(
               width: 400,
               height: 200,
               alignment: Alignment.center,
-              child: Text(
+              decoration: const BoxDecoration(color: Colors.black),
+              child: const Text(
                 'Is your cat a dog?',
                 style: TextStyle(color: Colors.white),
               ),
-              decoration: BoxDecoration(color: Colors.black),
             ),
-            SizedBox(
+            const SizedBox(
               height: 225,
             ),
             Container(
               width: 200,
               height: 50,
-              decoration: BoxDecoration(color: Colors.black),
+              decoration: const BoxDecoration(color: Colors.black),
               child: TextButton(
                 onPressed: null,
-                child: Text(
+                style: TextButton.styleFrom(
+                  backgroundColor: Colors.green,
+                  shape: const BeveledRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(5))),
+                ),
+                child: const Text(
                   'YES',
                   style: TextStyle(
                       fontWeight: FontWeight.bold, color: Colors.black),
-                ),
-                style: TextButton.styleFrom(
-                  backgroundColor: Colors.green,
-                  shape: BeveledRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(5))),
                 ),
               ),
             ),
             Container(
               width: 200,
               height: 50,
-              margin: EdgeInsets.all(10),
-              decoration: BoxDecoration(color: Colors.black),
+              margin: const EdgeInsets.all(10),
+              decoration: const BoxDecoration(color: Colors.black),
               child: TextButton(
                 onPressed: null,
-                child: Text(
-                  'NO',
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold, color: Colors.black),
-                ),
                 style: TextButton.styleFrom(
                   backgroundColor: Colors.red,
                   shape: BeveledRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(5))),
                 ),
+                child: const Text(
+                  'NO',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold, color: Colors.black),
+                ),
               ),
             ),
-            SizedBox(height: 100,),
+            const SizedBox(height: 100,),
             Container(
-              margin: EdgeInsets.symmetric(vertical: 5),
+              margin: const EdgeInsets.symmetric(vertical: 5),
               width: 450,
               alignment: Alignment.bottomCenter,
-              decoration: BoxDecoration(color: Colors.black),
-              child: Row(
+              decoration: const BoxDecoration(color: Colors.black),
+              child: const Row(
                 children: [
                   Icon(Icons.close_sharp, color: Colors.grey,),
                   Icon(Icons.close_sharp, color: Colors.grey,),

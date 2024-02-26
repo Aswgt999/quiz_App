@@ -16,11 +16,11 @@ class _SplashScreenState extends State<Splash> {
   void initState() {            //The first fn that is called when the app is opened
     // TODO: implement initState
     super.initState();
-    Timer(Duration(seconds: 1), () => Navigator.push(context, MaterialPageRoute(builder: (context) => Question())));
+    Timer(const Duration(seconds: 1), () => Navigator.push(context, MaterialPageRoute(builder: (context) => const Question())));
   }
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
         backgroundColor: Colors.red,
         body: Center(
           child: CircleAvatar(
