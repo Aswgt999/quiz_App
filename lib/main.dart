@@ -18,7 +18,7 @@ class _QuizAppState extends State<QuizApp> {   // extends - inheritance
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Splash(),
+      home: Splash(),  // object
     );
   }
 }
