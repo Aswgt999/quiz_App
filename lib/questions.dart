@@ -25,7 +25,7 @@ class _QuestionState extends State<Question> {
               alignment: Alignment.center,
               decoration: const BoxDecoration(color: Colors.black),
               child: const Text(
-                'Is your cat a dog?',
+                'hello',
                 style: TextStyle(color: Colors.white),
               ),
             ),
