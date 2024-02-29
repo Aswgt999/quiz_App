@@ -1,7 +1,6 @@
 
-import 'dart:io';
 
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 import 'package:quiz_app/questions.dart';
 
@@ -27,12 +26,40 @@ class _QuestionState extends State<Question> {
     Quiz('Mount Everest is the tallest mountain in the world.', false),
   ];
 
-  int q_no = 0;
+  int qNo = 0;
+
+  String result = '';
+
+  List<Icon> ansList = [Icon(Icons.check, color: Colors.green,),];
+
   void next() {
-    if (q_no < _question.length) {
-      q_no++;
+    if (qNo < _question.length) {
+      qNo++;
     }
   }
+  
+  void checkAns(bool check) {
+    if (check == _question[qNo].ans) {
+      result = 'correct';
+    } else {
+      result = 'wrong';
+    }
+  }
+  // void matchYes() {
+  //   if (_question[q_no].ans == true) {
+  //     check = 1;
+  //   }else {
+  //     check = 0;
+  //   }
+  // }
+  // void matchNo() {
+  //   if (_question[q_no].ans == false) {
+  //     check = 1;
+  //   }else {
+  //     check = 0;
+  //   }
+  // }
+
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +80,7 @@ class _QuestionState extends State<Question> {
               alignment: Alignment.center,
               decoration: const BoxDecoration(color: Colors.yellow,borderRadius: BorderRadius.all(Radius.circular(10))),
               child: Text(
-                _question[q_no].que,
+                _question[qNo].que,
                 style: const TextStyle(color: Colors.black, fontSize: 20),
 
               ),
@@ -70,7 +97,8 @@ class _QuestionState extends State<Question> {
               child: TextButton(
                 onPressed:() {
                   setState(() {
-                    next();
+                    checkAns(true);// compare answer to true
+                    next(); // to next question
                   });
                 },
                 style: TextButton.styleFrom(
@@ -94,6 +122,7 @@ class _QuestionState extends State<Question> {
               child: TextButton(
                 onPressed: () {
                   setState(() {
+                    checkAns(false);
                     next();
                   });
                 },
@@ -110,17 +139,16 @@ class _QuestionState extends State<Question> {
             ),
             const SizedBox(height: 100,),
 
+
+
             // the cross field
             Container(
               margin: const EdgeInsets.symmetric(vertical: 5),
               width: 450,
               alignment: Alignment.bottomCenter,
               decoration: const BoxDecoration(color: Colors.black),
-              child: const Row(
-                children: [
-                  Icon(Icons.close_sharp, color: Colors.grey,),
-                  Icon(Icons.close_sharp, color: Colors.grey,),
-                ],
+              child: Row(
+                children: ansList ,
               ),
             )
           ],
